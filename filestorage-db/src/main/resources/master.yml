@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/100324_create_uuid_extension.yml
+      relativeToChangelogFile: true
+  - include:
+      file: db/migration/100324_create_file_table.yml
+      relativeToChangelogFile: true

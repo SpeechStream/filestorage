@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100324_create_file_table.yml
+      author: skfl
+      changes:
+        - sql:
+            sql: "create table if not exists file
+                  (
+                      id   uuid default uuid_generate_v1() primary key,
+                      name varchar(250),
+                      extension varchar(30),
+                      owner_id uuid
+                  )
+                  "

@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100324_create_uuid_extension
+      author: skfl
+      changes:
+        - sql:
+            sql: "create extension if not exists \"uuid-ossp\";"
