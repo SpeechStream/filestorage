@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile
 @RestController
 class FileControllerImpl : FileController {
 
-    override fun upload(multipartFile: MultipartFile): String {
+    override suspend fun upload(multipartFile: MultipartFile): String {
         TODO("Not yet implemented")
     }
 }

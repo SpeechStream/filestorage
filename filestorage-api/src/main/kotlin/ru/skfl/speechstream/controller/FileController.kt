@@ -11,5 +11,5 @@ interface FileController {
 
     @PostMapping
     @Operation(description = "Загрузить файл")
-    fun upload(multipartFile: MultipartFile): String
+    suspend fun upload(multipartFile: MultipartFile): String
 }

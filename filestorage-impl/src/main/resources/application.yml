@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: filestorage
+  r2dbc:
+    username: ${FILESTORAGE_DB_USERNAME:postgres}
+    password: ${FILESTORAGE_DB_PASSWORD:password}
+    url: r2dbc:${FILESTORAGE_DB_URL:postgresql://localhost:5432/filestorage}
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  liquibase:
+    password: ${FILESTORAGE_DB_PASSWORD:password}
+    url: jdbc:${FILESTORAGE_DB_URL:postgresql://localhost:5432/filestorage}
+    user: ${FILESTORAGE_DB_USERNAME:postgres}
+    change-log: classpath:master.yml
+  webflux:
+    base-path: /filestorage
+server:
+  port: ${FILESTORAGE_SERVER_PORT:9191}
+
+springdoc:
+  swagger-ui:
+    enabled: false
+    path: /swagger-ui.html
+    config-url: /api-docs/swagger-config
+    url: /api-docs
+    disable-swagger-default-url: true
+  api-docs:
+    enabled: true
+    path: /api-docs
+
+filestorage:
+  minio:
+    url: ${MINIO_URL:http://localhost:9000}
+    user: ${MINIO_USER:minio-root-user}
+    password: ${MINIO_PASSWORD:minio-root-password}
+    default-bucket-name: ${MINIO_DEFAULT_BUCKET_NAME:bucket}

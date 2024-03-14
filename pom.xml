@@ -33,5 +33,6 @@
         <pg.driver.version>42.7.2</pg.driver.version>
         <jooq.version>3.18.11</jooq.version>
         <minio.version>8.5.5</minio.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 </project>
